@@ -1,0 +1,344 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Quicksand', sans-serif;
+  background: radial-gradient(#ffe6f1 2px, transparent 2px),
+              radial-gradient(#ffe6f1 2px, transparent 2px);
+  background-size: 50px 50px;
+  background-color: #fff;
+  background-position: 0 0, 25px 25px;
+  animation: moveDots 20s linear infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.invitation-card {
+  text-align: center;
+  border: 2px solid #e5b2d1;
+  padding: 30px 20px;
+  border-radius: 20px;
+  max-width: 500px;
+  width: 90%;
+  background-color: #fff;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(250, 170, 210, 0.3);
+}
+
+.crown {
+  font-size: 60px;
+  margin-bottom: 20px;
+  animation: blink 1.5s infinite alternate;
+  color: #d97ba6;
+}
+
+@keyframes blink {
+  0% { opacity: 1; transform: scale(1);}
+  100% { opacity: 0.5; transform: scale(1.1);}
+}
+
+@keyframes moveDots {
+  0% {
+    background-position: 0 0, 25px 25px;
+  }
+  100% {
+    background-position: 50px 50px, 75px 75px;
+  }
+}
+
+.small-text {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 24px;
+  color: #9b4c7c;
+  font-weight: 600;
+  margin: 10px 0;
+}
+
+.middle-image {
+  width: 200px; 
+  height: auto;
+  border-radius: 5%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+/* Thêm hiệu ứng zoom khi hover vào hình ảnh */
+.middle-image:hover {
+  transform: scale(1.1);
+}
+
+
+/* Tên bé Lavie Lan Chi */
+.name {
+  font-family: 'Pacifico', cursive;
+  font-size: 40px;
+  color: #f78fb3;
+  margin: 20px 0;
+  font-weight: normal;
+}
+
+.fly-text {
+  display: inline-block;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.confirm {
+  margin-top: 30px;
+}
+
+.confirm h3 {
+  font-family: 'Quicksand', sans-serif;
+  color: #c85a9c;
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.confirm-options {
+  display: flex;
+  justify-content: space-around;
+  font-size: 16px;
+  color: #a55a7a;
+  margin-top: 10px;
+}
+
+.timeline {
+  text-align: center;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.timeline h3 {
+  font-family: 'Quicksand', sans-serif;
+  color: #c85a9c;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.timeline ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.timeline li {
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  transform: translateX(-50px);
+  animation: slideIn 3s ease-in-out forwards; 
+  width: 100%;
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.timeline li:nth-child(1) {
+  animation-delay: 0.4s;
+}
+.timeline li:nth-child(2) {
+  animation-delay: 0.6s;
+}
+.timeline li:nth-child(3) {
+  animation-delay: 0.8s;
+}
+.timeline li:nth-child(4) {
+  animation-delay: 1s;
+}
+
+.timeline .time {
+  background-color: #f78fb3;
+  color: white;
+  padding: 6px 14px;
+  border-radius: 20px;
+  margin-right: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  min-width: 70px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.timeline .time:hover {
+  background-color: #ffadd6;
+  transform: scale(1.1);
+  box-shadow: 0 0 10px #ffc2d6;
+}
+
+.timeline .event {
+  font-size: 18px;
+  color: #9b4c7c;
+  font-weight: 600;
+}
+
+/* Kiểu cho form và các trường nhập liệu */
+.form-group {
+  margin: 20px 4rem;
+  text-align: left;
+  display: flex;
+  justify-content: left;
+  align-items: baseline;
+  width: 100%;
+}
+
+.form-group label {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 16px;
+  color: #9b4c7c;
+  font-weight: 600;
+  display: block;
+  margin-right: 8px;
+  width: 25%;
+}
+
+.radio-group{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.form-group input[type="text"] {
+  padding: 12px;
+  font-size: 16px;
+  border: 2px solid #e5b2d1;
+  border-radius: 20px;
+  background-color: #f9f0f4;
+  color: #9b4c7c;
+  transition: all 0.3s ease;
+  width: 14rem;
+}
+
+.form-group input[type="text"]:focus {
+  outline: none;
+  border-color: #f78fb3;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(250, 170, 210, 0.5);
+}
+
+/* Kiểu cho radio button và label */
+.form-group input[type="radio"] {
+  margin-right: 10px;
+  accent-color: #f78fb3;
+}
+
+.form-group .radio-group {
+  margin-top: 10px;
+}
+
+.form-group .radio-group div {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.form-group .radio-group input[type="radio"] {
+  margin-right: 8px;
+}
+
+form button {
+  background-color: #f78fb3;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+form button:hover {
+  background-color: #ffadd6;
+  box-shadow: 0 4px 10px rgba(255, 170, 210, 0.3);
+}
+
+.form-group input[type="text"]:hover {
+  border-color: #f78fb3;
+}
+
+textarea {
+  width: 14rem;
+  padding: 10px;
+  font-size: 16px;
+  font-family: 'Quicksand', sans-serif;
+  border: 2px solid #e5b2d1;
+  border-radius: 10px;
+  resize: vertical; /* Cho phép thay đổi kích thước chiều cao */
+  margin-top: 10px;
+  margin-bottom: 20px;
+  background-color: #f8f0f6;
+  color: #9b4c7c;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+textarea:focus {
+  outline: none;
+  border-color: #f78fb3;
+  box-shadow: 0 0 10px rgba(250, 170, 210, 0.5);
+}
+
+textarea::placeholder {
+  color: #a55a7a;
+  font-style: italic;
+}
+
+/* Responsive Mobile */
+@media (max-width: 500px) {
+  .invitation-card {
+    padding: 20px 10px;
+  }
+
+  .name {
+    font-size: 32px;
+  }
+
+  .small-text {
+    font-size: 20px;
+  }
+
+  .confirm-options {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .timeline .time {
+    margin-bottom: 5px;
+  }
+  .form-group {
+    margin: 20px 0;
+  }
+
+  .form-group label{
+    width: 40%;
+  }
+
+  .form-group input[type="text"] {
+    padding: 10px;
+    font-size: 14px;
+    margin: 20px 0;
+  }
+
+  form button {
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+}
