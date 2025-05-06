@@ -9,15 +9,26 @@
 </head>
 <body>
   <div class="invitation-card">
+    <div class="cursor-light"></div>
     <div class="crown">👑</div>
 
-    <h2 class="small-text">Công Chúa Bé Bồng Của Chúng Tôi</h2>
+    <h2 class="small-text">Công Chúa Bé bỏng Của Chúng Tôi</h2>
 
     <img src="assets/images/lavie2.JPG" alt="Hình ảnh" class="middle-image">
 
     <h1 class="name">Lavie Lan Chi</h1>
 
     <h2 class="small-text fly-text">sắp lên một tuổi!</h2>
+
+    <div class="birthday-invitation">
+      <p class="invite-line">🎉 Thư mời đến dự</p>
+      <h2 class="highlight-name">Tiệc sinh nhật của bé Lavie Lan Chi!</h2>
+      <p class="invite-details">
+        Hãy cùng đến chung vui với với gia đình trong ngày thật đặc biệt này nha 💕<br>
+        📅 <strong>Thời gian:</strong> 15h30, Thứ 6, ngày 30/05/2025<br>
+        📍 <strong>Địa điểm:</strong> Tầng 7, Nhà hàng Hòn Đất, 140, Tân Sơn Nhì, Tân Phú, HCM
+      </p>
+    </div>
 
     <div class="timeline">
       <h3>LỊCH TRÌNH BUỔI TIỆC</h3>
@@ -43,13 +54,22 @@
     <div class="confirm">
       <h3>XÁC NHẬN THAM DỰ TIỆC:</h3>
       <div class="confirm-options">
-        <div>QUÉT MÃ QR</div>
-        <div>IB ZALO<br>0932929610</div>
+        <div>QR bản đồ: <br> <img src="assets/images/map.png" alt="Hình ảnh" class="middle-image"> </div>
+        <div>ZALO: 0932929610</div>
       </div>
-      <form id="birthday-form">
+      <form id="birthday-form"
+        action="https://script.google.com/macros/s/AKfycbzuCK_SJ1FB4BL4O9JmJWMkB0MW-w1VvgHNmLkKNVv4f38wVAQ661G64tKUkO4S9CrBmw/exec"
+        method="POST" 
+        target="hidden_iframe" 
+        onsubmit="submitted=true;"
+        class="textarea-container input-container"
+      >
         <div class="form-group">
           <label for="name">Tên của bạn:</label>
-          <input type="text" id="name" name="name" placeholder="Nhập tên của bạn" required>
+          <div class="underline-wrapper">
+            <input type="text" id="name" name="name" placeholder="Nhập tên của bạn" required>
+            <span class="underline"></span>
+          </div>
         </div>
         <div class="form-group">
           <label>Tham dự tiệc?</label>
@@ -63,13 +83,34 @@
           </div>
         </div>
         <div class="form-group">
-          <label for="message">Lời chúc:</label>
-          <textarea id="message" name="message" rows="4" placeholder="Nhập lời chúc của bạn tại đây..." ></textarea>
+          <label for="adults">Người lớn:</label>
+          <input type="number" id="adults" name="adults" min="0" placeholder="Số người lớn">
+        </div>
+        
+        <div class="form-group">
+          <label for="children">Trẻ em:</label>
+          <input type="number" id="children" name="children" min="0" placeholder="Số trẻ em">
+        </div>
+        <div class="form-group al-start">
+          <label for="message" class="pt-15 w-80">Lời chúc:</label>
+          <div class="underline-wrapper">
+            <textarea id="message" name="message" rows="4" placeholder="Nhập lời chúc của bạn..."></textarea>
+            <span class="underline"></span>
+          </div>
         </div>
         <button type="submit">Xác Nhận</button>
       </form>
+      <iframe name="hidden_iframe" style="display:none;" onload="if(submitted) alert('Đã gửi thành công!')"></iframe>
     </div>
+    <div class="thank-you-note">
+      <p class="thank-title">💖 Lời cảm ơn từ gia đình bé Lan Chi 💖</p>
+      <p class="thank-text">
+        Cảm ơn bạn rất nhiều vì đã dành thời gian quý báu để đến chung vui cùng gia đình chúng tôi trong ngày đặc biệt của bé Lan Chi!<br>
+        Sự hiện diện của bạn chính là món quà tuyệt vời nhất mà chúng tôi có thể nhận được! 🎁
+      </p>
+    </div>
+    
   </div>
-  <script src="assets/js/script.js"></script>
+  <script>let submitted = false;</script>
 </body>
 </html>

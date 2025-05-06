@@ -33,6 +33,41 @@ body {
   color: #d97ba6;
 }
 
+.birthday-invitation {
+  margin-top: 20px;
+  background-color: #fff0f6;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(255, 170, 210, 0.15);
+  animation: fadeIn 1s ease;
+}
+
+.invite-line {
+  font-size: 18px;
+  color: #d97ba6;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.highlight-name {
+  font-family: 'Pacifico', cursive;
+  font-size: 28px;
+  color: #f78fb3;
+  margin: 10px 0;
+}
+
+.invite-details {
+  font-size: 16px;
+  color: #9b4c7c;
+  line-height: 1.6;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
 @keyframes blink {
   0% { opacity: 1; transform: scale(1);}
   100% { opacity: 0.5; transform: scale(1.1);}
@@ -191,12 +226,11 @@ body {
 
 /* Kiểu cho form và các trường nhập liệu */
 .form-group {
-  margin: 20px 4rem;
+  padding: 20px 3rem 0 3rem;
   text-align: left;
   display: flex;
-  justify-content: left;
+  justify-content: space-between;
   align-items: baseline;
-  width: 100%;
 }
 
 .form-group label {
@@ -206,7 +240,6 @@ body {
   font-weight: 600;
   display: block;
   margin-right: 8px;
-  width: 25%;
 }
 
 .radio-group{
@@ -216,23 +249,41 @@ body {
   margin-top: 10px;
 }
 
-.form-group input[type="text"] {
-  padding: 12px;
-  font-size: 16px;
-  border: 2px solid #e5b2d1;
-  border-radius: 20px;
-  background-color: #f9f0f4;
-  color: #9b4c7c;
-  transition: all 0.3s ease;
-  width: 14rem;
+.input-container {
+  position: relative;
 }
 
-.form-group input[type="text"]:focus {
-  outline: none;
-  border-color: #f78fb3;
-  background-color: #fff;
-  box-shadow: 0 0 5px rgba(250, 170, 210, 0.5);
+.underline-wrapper {
+  position: relative;
 }
+
+.underline-wrapper input {
+  border: none;
+  border-bottom: 2px solid #e5b2d1;
+  background-color: transparent;
+  padding: 10px 0;
+  font-size: 16px;
+  font-family: 'Quicksand', sans-serif;
+  color: #9b4c7c;
+  outline: none;
+  width: 295px;
+}
+
+.underline {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background-color: #f78fb3;
+  transition: width 0.4s ease-in-out;
+ 
+}
+
+.underline-wrapper input:focus + .underline {
+  width: 290px;
+}
+
 
 /* Kiểu cho radio button và label */
 .form-group input[type="radio"] {
@@ -274,32 +325,77 @@ form button:hover {
   border-color: #f78fb3;
 }
 
-textarea {
-  width: 14rem;
-  padding: 10px;
+.textarea-container {
+  position: relative;
+  width: 100%;
+}
+
+.textarea-container .underline-wrapper {
+  position: relative;
+  width: 70%;
+}
+
+.textarea-container textarea {
+  width: 100%;
+  padding: 10px 0;
   font-size: 16px;
   font-family: 'Quicksand', sans-serif;
-  border: 2px solid #e5b2d1;
-  border-radius: 10px;
-  resize: vertical; /* Cho phép thay đổi kích thước chiều cao */
-  margin-top: 10px;
-  margin-bottom: 20px;
-  background-color: #f8f0f6;
   color: #9b4c7c;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-}
-
-textarea:focus {
+  border: none;
+  border-radius: 0;
   outline: none;
-  border-color: #f78fb3;
-  box-shadow: 0 0 10px rgba(250, 170, 210, 0.5);
+  resize: vertical;
+  background: 
+    repeating-linear-gradient(
+      to bottom,
+      transparent,
+      transparent 32px,
+      #f78fb3 35px,
+      transparent 2px
+    );
+  line-height: 30px;
+  margin-bottom: 20px;
 }
 
-textarea::placeholder {
-  color: #a55a7a;
-  font-style: italic;
+.textarea-container .underline {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background-color: #f78fb3;
+  transition: width 0.4s ease-in-out;
 }
+
+.textarea-container textarea:focus + .underline {
+  width: 100%;
+}
+
+.al-start{
+  align-items: flex-start;
+}
+
+.pt-15{
+  padding-top: 15px;
+}
+
+.form-group input[type="number"] {
+  padding: 12px 0;
+  font-size: 16px;
+  border: none;
+  border-bottom: 2px solid #e5b2d1;
+  background-color: transparent;
+  color: #9b4c7c;
+  transition: all 0.3s ease;
+  width: 17.7rem;
+}
+
+.form-group input[type="number"]:focus {
+  outline: none;
+  border-bottom: 2px solid #f78fb3;
+  box-shadow: 0 2px 5px rgba(250, 170, 210, 0.3);
+}
+
 
 /* Responsive Mobile */
 @media (max-width: 500px) {
@@ -320,11 +416,16 @@ textarea::placeholder {
     gap: 10px;
   }
 
+  .w-80{
+    width: 80px !important;
+  }
+
   .timeline .time {
     margin-bottom: 5px;
   }
   .form-group {
     margin: 20px 0;
+    padding: 0 2rem;
   }
 
   .form-group label{
@@ -334,11 +435,42 @@ textarea::placeholder {
   .form-group input[type="text"] {
     padding: 10px;
     font-size: 14px;
-    margin: 20px 0;
+  }
+
+  .underline-wrapper input {
+    width: 190px;
   }
 
   form button {
     padding: 10px 20px;
     font-size: 16px;
   }
+}
+
+.thank-you-note {
+  background-color: #ffeef6;
+  margin-top: 30px;
+  padding: 20px;
+  border: 2px dashed #f8b0d8;
+  border-radius: 15px;
+  animation: fadeInUp 1s ease-out;
+}
+
+.thank-title {
+  font-family: 'Pacifico', cursive;
+  color: #f78fb3;
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.thank-text {
+  font-family: 'Quicksand', sans-serif;
+  color: #9b4c7c;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
