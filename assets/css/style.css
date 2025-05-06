@@ -360,7 +360,7 @@ form button:hover {
 .textarea-container .underline {
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: 23px;
   height: 2px;
   width: 0;
   background-color: #f78fb3;
