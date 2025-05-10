@@ -51,7 +51,7 @@ body {
 
 .highlight-name {
   font-family: 'Pacifico', cursive;
-  font-size: 28px;
+  font-size: 30px;
   color: #f78fb3;
   margin: 10px 0;
 }
@@ -98,19 +98,32 @@ body {
   transition: transform 0.3s ease;
 }
 
-/* Thêm hiệu ứng zoom khi hover vào hình ảnh */
 .middle-image:hover {
   transform: scale(1.1);
 }
 
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 5px #f78fb3, 0 0 10px #f78fb3, 0 0 15px #f78fb3;
+    transform: scale(1);
+  }
+  50% {
+    text-shadow: 0 0 10px #ffb6c1, 0 0 20px #ffb6c1, 0 0 30px #ffb6c1;
+    transform: scale(1.05);
+  }
+  100% {
+    text-shadow: 0 0 5px #f78fb3, 0 0 10px #f78fb3, 0 0 15px #f78fb3;
+    transform: scale(1);
+  }
+}
 
-/* Tên bé Lavie Lan Chi */
 .name {
   font-family: 'Pacifico', cursive;
   font-size: 40px;
   color: #f78fb3;
   margin: 20px 0;
   font-weight: normal;
+  animation: glow 2s ease-in-out infinite;
 }
 
 .fly-text {
@@ -224,7 +237,6 @@ body {
   font-weight: 600;
 }
 
-/* Kiểu cho form và các trường nhập liệu */
 .form-group {
   padding: 20px 3rem 0 3rem;
   text-align: left;
@@ -266,10 +278,9 @@ body {
   font-family: 'Quicksand', sans-serif;
   color: #9b4c7c;
   outline: none;
-  width: 295px;
 }
 
-.underline {
+.underline-wrapper .underline {
   position: absolute;
   left: 0;
   bottom: 0;
@@ -280,12 +291,6 @@ body {
  
 }
 
-.underline-wrapper input:focus + .underline {
-  width: 290px;
-}
-
-
-/* Kiểu cho radio button và label */
 .form-group input[type="radio"] {
   margin-right: 10px;
   accent-color: #f78fb3;
@@ -330,7 +335,7 @@ form button:hover {
   width: 100%;
 }
 
-.textarea-container .underline-wrapper {
+.textarea-container .textarea-underline-wrapper {
   position: relative;
   width: 70%;
 }
@@ -357,7 +362,7 @@ form button:hover {
   margin-bottom: 20px;
 }
 
-.textarea-container .underline {
+.textarea-container .textarea-underline {
   position: absolute;
   left: 0;
   bottom: 23px;
@@ -367,7 +372,7 @@ form button:hover {
   transition: width 0.4s ease-in-out;
 }
 
-.textarea-container textarea:focus + .underline {
+.textarea-container textarea:focus + .textarea-underline {
   width: 100%;
 }
 
@@ -396,8 +401,6 @@ form button:hover {
   box-shadow: 0 2px 5px rgba(250, 170, 210, 0.3);
 }
 
-
-/* Responsive Mobile */
 @media (max-width: 500px) {
   .invitation-card {
     padding: 20px 10px;
@@ -435,10 +438,6 @@ form button:hover {
   .form-group input[type="text"] {
     padding: 10px;
     font-size: 14px;
-  }
-
-  .underline-wrapper input {
-    width: 190px;
   }
 
   form button {
