@@ -267,17 +267,18 @@ body {
 
 .underline-wrapper {
   position: relative;
+  width: 70%;
 }
 
 .underline-wrapper input {
   border: none;
   border-bottom: 2px solid #e5b2d1;
   background-color: transparent;
-  padding: 10px 0;
   font-size: 16px;
   font-family: 'Quicksand', sans-serif;
   color: #9b4c7c;
   outline: none;
+  width: 100%;
 }
 
 .underline-wrapper .underline {
@@ -288,7 +289,6 @@ body {
   width: 0;
   background-color: #f78fb3;
   transition: width 0.4s ease-in-out;
- 
 }
 
 .form-group input[type="radio"] {
@@ -385,7 +385,6 @@ form button:hover {
 }
 
 .form-group input[type="number"] {
-  padding: 12px 0;
   font-size: 16px;
   border: none;
   border-bottom: 2px solid #e5b2d1;
@@ -436,8 +435,8 @@ form button:hover {
   }
 
   .form-group input[type="text"] {
-    padding: 10px;
     font-size: 14px;
+    margin-left: -15px;
   }
 
   form button {
